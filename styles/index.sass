@@ -9,26 +9,139 @@ html, body
   margin: 0px
   padding: 0px
   color: white
-  overflow-x: hidden
   scroll-behavior: smooth
   -webkit-tap-highlight-color: transparent
   font-family: 'Ubuntu', sans-serif
 
   nav
     position: fixed
-    width: 100%
+    width: 100vw
     height: 75px
-    background-color: black
     z-index: 5
 
+    #black-nav
+      position: absolute
+      width: 100%
+      height: 100%
+      background-color: black
+      opacity: 0.5
+
     #name
-      position: relative
-      left: 25px
-      top: 6px
+      position: absolute
+      left: 35px
+      top: 50%
+      transform: translateY(-50%)
       text-decoration: none
       font-family: 'Permanent Marker', cursive
-      font-size: 2.5em
+      font-size: 1.75em
       color: white
+      margin: 0px
+
+    #categories
+      display: flex
+      flex-direction: row
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+
+      .category
+        position: relative
+        height: 77.5px
+        margin: 0px
+        padding: 0px 25px
+
+        a
+          display: flex
+          flex-direction: row
+          position: relative
+          height: auto
+          color: white
+          text-decoration: none
+
+          p
+            position: relative
+            top: 26.25px
+            font-size: 1.25em
+            margin: 0px
+            padding: 0px
+
+          i
+            position: relative
+            margin-top: 31.25px
+            margin-left: 12.5px
+
+        div
+          display: none
+          flex-direction: column
+          position: absolute
+          width: 244px
+          top: 75px
+          margin-left: -25px
+          background-color: white
+
+          a
+            padding: 12.5px 25px 12.5px 25px
+            font-size: 1.25em
+            color: black
+            transition: 0.1s
+
+          a:hover
+            color: gray
+
+      .category:hover
+        background-color: #E8E8E8
+
+      .category:hover a
+        color: black
+
+      .category:hover div
+        display: flex
+
+    #search-shop
+      display: flex
+      flex-direction: row
+      position: absolute
+      right: 50px
+      top: 50%
+      transform: translateY(-50%)
+
+      #search
+        position: relative
+        top: 50%
+
+        input
+          width: 175px
+          height: 30px
+          border: none
+          border-radius: 5px
+          padding-left: 10px
+
+        input:focus
+          outline: none
+
+        i
+          position: absolute
+          right: 0px
+          color: black
+          padding: 8.5px
+
+        i:hover
+          cursor: pointer
+
+      a
+        position: relative
+        top: 50%
+        color: white
+        text-decoration: none
+        margin-left: 15px
+
+        i
+          position: relative
+          left: 50%
+          top: 50%
+          transform: translate(-50%, -50%)
+
 
   section
     position: relative
@@ -36,3 +149,402 @@ html, body
     height: auto
     margin: 0
     padding: 0
+    background-color: #F5F5F5
+
+  #home
+    height: 100vh
+
+    img
+      position: absolute
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+    #container
+      position: absolute
+      width: 600px
+      height: auto
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+
+      #background
+        position: absolute
+        width: 100%
+        height: 100%
+        background-color: black
+        opacity: 0.5
+
+      h1
+        position: relative
+        width: 75%
+        margin-top: 75px
+        left: 50%
+        transform: translateX(-50%)
+        font-size: 2.5em
+        text-align: center
+        text-transform: uppercase
+        text-shadow: 0px 0px 25px black
+
+      #line
+        position: relative
+        width: 150px
+        height: 4px
+        margin-top: 25px
+        left: 50%
+        transform: translateX(-50%)
+        background-color: white
+
+      h3
+        position: relative
+        margin-top: 25px
+        left: 50%
+        transform: translateX(-50%)
+        font-size: 1.4em
+        text-align: center
+        font-style: italic
+        text-shadow: 0px 0px 25px black
+
+      p
+        position: relative
+        margin: 25px 0px 75px 0px
+        left: 50%
+        transform: translateX(-50%)
+        font-size: 1.5em
+        font-weight: bold
+        text-align: center
+        text-transform: uppercase
+        text-decoration: underline
+        text-shadow: 0px 0px 25px black
+
+      p:hover
+        cursor: pointer
+
+
+  #categories
+
+    #container
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      position: relative
+      width: 65%
+      height: auto
+      left: 50%
+      transform: translateX(-50%)
+      background-color: white
+      top: -90px
+
+      .shop
+        position: relative
+        width: 100%
+        height: auto
+        background-color: white
+        transition: 0.4s
+        text-decoration: none
+
+        h2
+          position: relative
+          text-align: center
+          font-size: 2.25em
+          text-transform: uppercase
+          color: black
+
+        p
+          position: relative
+          text-align: center
+          font-size: 1.25em
+          font-weight: bold
+          text-transform: uppercase
+          color: #2261b5
+          margin: -15px 0px 10px 0px
+
+        img
+          position: relative
+          width: 300px
+          height: 300px
+          left: 50%
+          transform: translateX(-50%)
+          margin-top: 50px
+          object-fit: cover
+          margin-bottom: 50px
+
+      .shop:hover
+        background-color: #E8E8E8
+        cursor: pointer
+
+
+  #featured
+    padding-bottom: 100px
+
+    #container
+      display: grid
+      grid-template-columns: 1fr 4fr
+      position: relative
+      width: 75%
+      height: auto
+      left: 50%
+      transform: translateX(-50%)
+
+      #shop-text
+        background-color: black
+        position: relative
+        width: 100%
+        height: 500px
+        transition: 0.4s
+        text-decoration: none
+        background-color: lightgrey
+
+        h3
+          position: absolute
+          font-size: 2em
+          color: black
+          text-align: center
+          left: 50%
+          transform: translate(-50%, -50%)
+          text-transform: uppercase
+
+        #top
+          top: 33.5%
+
+        #bottom
+          top: 53.5%
+
+        #line
+          position: absolute
+          width: 150px
+          height: 4px
+          left: 50%
+          top: 50%
+          transform: translate(-50%, -50%)
+          background-color: black
+
+      div
+        display: flex
+        flex-direction: row
+
+        .shop
+          position: relative
+          width: 100%
+          height: 500px
+          background-color: white
+          transition: 0.4s
+          text-decoration: none
+
+          img
+            position: relative
+            width: 75%
+            height: 250px
+            object-fit: contain
+            left: 50%
+            transform: translateX(-50%)
+            margin-top: 25px
+
+          h3
+            position: relative
+            width: 80%
+            left: 50%
+            transform: translateX(-50%)
+            margin-top: 30px
+            text-align: center
+            font-size: 1.25em
+            color: black
+
+          p
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+            bottom: 25px
+            text-align: center
+            font-size: 1.25em
+            color: red
+
+        .shop:hover
+          background-color: #E8E8E8
+          cursor: pointer
+
+      #set2
+        display: none
+
+  #longboards
+    padding-bottom: 100px
+
+    #container
+      display: grid
+      grid-template-columns: 1fr 1fr
+      position: relative
+      width: 75%
+      height: auto
+      left: 50%
+      transform: translateX(-50%)
+
+      .shop
+        position: relative
+        width: 95%
+        height: 500px
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        transition: 0.25s
+
+        img
+          position: absolute
+          width: 100%
+          height: 100%
+          object-fit: cover
+
+        a
+          position: absolute
+          width: 450px
+          height: 250px
+          left: 50%
+          top: 50%
+          transform: translate(-50%, -50%)
+          color: white
+
+          #background
+            position: absolute
+            width: 100%
+            height: 100%
+            background-color: black
+            opacity: 0.5
+
+          h3
+            position: relative
+            margin-top: 50px
+            text-align: center
+            font-size: 1.75em
+            text-transform: uppercase
+
+          #line
+            position: relative
+            width: 150px
+            height: 4px
+            margin-top: -5px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: white
+
+          p
+            position: relative
+            margin-top: 30px
+            text-align: center
+            font-size: 0.9em
+            text-transform: uppercase
+            font-style: italic
+
+          h5
+            position: relative
+            margin-top: 25px
+            text-align: center
+            font-size: 1.1em
+            text-transform: uppercase
+            text-decoration: underline
+
+        a:hover
+          cursor: pointer
+
+      .shop:hover
+        box-shadow: 0px 0px 25px lightgray
+
+  #articles
+    padding-bottom: 50px
+
+    h1
+      position: relative
+      text-align: center
+      font-size: 2.5em
+      color: black
+      margin: 0px
+
+    #line
+      position: relative
+      width: 150px
+      height: 4px
+      margin-top: 25px
+      left: 50%
+      transform: translateX(-50%)
+      background-color: black
+
+    #container
+      display: grid
+      grid-template-columns: 1fr 1fr
+      position: relative
+      width: 75%
+      height: auto
+      left: 50%
+      transform: translateX(-50%)
+
+      .article
+        position: relative
+        width: 95%
+        height: auto
+        margin-top: 45px
+        left: 50%
+        transform: translateX(-50%)
+        transition: 0.25s
+        border: 1px solid silver
+        color: black
+
+        img
+          position: relative
+          margin-top: 30px
+          width: 90%
+          height: 300px
+          left: 50%
+          transform: translateX(-50%)
+          object-fit: cover
+
+        .date
+          position: relative
+          margin-top: 15px
+          text-align: center
+          font-size: 0.9em
+          text-transform: uppercase
+          font-style: italic
+
+        h3
+          position: relative
+          width: 60%
+          margin-top: 15px
+          left: 50%
+          transform: translateX(-50%)
+          text-align: center
+          font-size: 1.5em
+          text-transform: uppercase
+
+        .text
+            position: relative
+            width: 75%
+            margin-top: -10px
+            left: 50%
+            transform: translateX(-50%)
+            text-align: center
+            font-size: 1em
+
+        h5
+          position: relative
+          margin-top: 25px
+          text-align: center
+          font-size: 1.1em
+          text-transform: uppercase
+          font-style: italic
+
+      .article:hover
+        box-shadow: 0px 0px 25px lightgray
+        cursor: pointer
+
+    #view-all
+      position: relative
+      width: 200px
+      left: 50%
+      transform: translateX(-50%)
+      margin-top: 50px
+      font-size: 1.25em
+      text-decoration: underline
+      text-transform: uppercase
+      text-align: center
+      padding: 5px
+      color: black
+
+    #view-all:hover
+      cursor: pointer
