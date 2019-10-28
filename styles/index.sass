@@ -220,7 +220,7 @@ html, body
           @media(max-width: 300px)
             padding: 0px 15px
 
-          a
+          .text
             display: flex
             flex-direction: row
             position: relative
@@ -240,7 +240,7 @@ html, body
               margin-top: 31.25px
               margin-left: 12.5px
 
-          div
+          .alternatives
             display: none
             flex-direction: column
             position: absolute
@@ -265,6 +265,7 @@ html, body
               font-size: 1.25em
               color: black
               transition: 0.1s
+              text-decoration: none
 
               @media(max-width: 350px)
                 font-size: 1em
@@ -275,10 +276,10 @@ html, body
         .category:hover
           background-color: #E8E8E8
 
-        .category:hover a
+        .category:hover .text
           color: black
 
-        .category:hover div
+        .category:hover .alternatives
           display: flex
 
       #menu:hover
